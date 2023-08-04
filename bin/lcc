@@ -1,0 +1,3 @@
+#!/usr/local/plan9/bin/rc
+
+cc -I/Users/loup/src/los/include $*
