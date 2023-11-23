@@ -1,7 +1,8 @@
 include ${CONFIG}
 
 LIBS=\
-	librune\
+	libc \
+	librune \
 	libutf
 
 all: libs

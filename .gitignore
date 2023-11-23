@@ -1,5 +1,5 @@
-include*
-bin*
-lib*
+include/*
+bin/*
+lib/*
 **.o
 **.DS_Store
