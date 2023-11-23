@@ -1,4 +1,4 @@
-include /Users/loup/src/chados/src/config.mk
+include ${CONFIG}
 
 LIBS=\
 	librune\

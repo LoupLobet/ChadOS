@@ -1,4 +1,4 @@
-OS=/Users/loup/src/chados
+OS=/Users/loup/chad-os
 SRCROOT=${OS}/src
 CONFIG=${SRCROOT}/config.mk
 
