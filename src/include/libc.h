@@ -22,13 +22,13 @@
  */
 extern void	*chadcalloc(ulong, ulong);
 extern void	 chadfree(void *);
-extern void *chadmalloc(ulong);
+extern void	*chadmalloc(ulong);
 extern void	*chadrealloc(void *, ulong);
 
 #ifndef UNIX
 #define calloc  chadcalloc
 #define free    chadfree
-#define malloc  chadmalloc
+#define malloc	chadmalloc
 #define realloc chadrealloc
 #endif
 
