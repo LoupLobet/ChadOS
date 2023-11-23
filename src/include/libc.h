@@ -2,7 +2,7 @@
 #define _LIBC_H_ 1
 
 #if __STDC_VERSION__ != 199901L
-#error "Host system must be provide C99"
+	#error "Host system must provide C99"
 #endif
 
 #if defined(__unix__) || defined(__APPLE__) && defined(__MACH__)
