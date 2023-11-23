@@ -2,3 +2,4 @@ include*
 bin*
 lib*
 **.o
+**.DS_Store
