@@ -1,19 +1,12 @@
-include ${CONFIG}
+include /Users/loup/src/chados/src/config.mk
 
-LIB=\
-	librune.a\
-	libutf.a
+LIBS=\
+	librune\
+	libutf
 
-all: ${LIB} clean install
+all: libs
 
-.c.o:
-	${CC} ${CFLAGS} -c $<
-
-${LIB}: lib%.a: %.o
-	${AR} rsc $@ $<
-
-clean:
-	rm -f *.o
-
-install:
-	mv *.a ${CHADOS}/lib/
+libs:
+	@for lib in ${LIBS}; do \
+		${MAKE} -C "$${lib}"; \
+	done

@@ -1,18 +1,16 @@
 include config.mk
 
-all: clean lib test
+all: include lib
 
-.c.o:
-	${CC} ${CFLAGS} -c $<
+.PHONY: include \
+        lib
+
+include:
+	@echo copy headers to the os tree; \
+	mkdir -p ${OSINCDIR};
+	cp ${SRCINCDIR}/*.h ${OSINCDIR};
 
 lib:
-	cd lib; ${MAKE} -f Makefile
-
-test: test.o
-	${LD} -o $@ $^ ${LDFLAGS}
-
-clean:
-	rm -f *.o
-	cd lib; ${MAKE} clean
-
-.PHONY:lib
+	@echo build libraries; \
+	mkdir -p ${OSLIBDIR}; \
+	${MAKE} -C ${SRCLIBDIR};
