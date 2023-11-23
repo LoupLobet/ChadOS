@@ -1,9 +1,10 @@
 include config.mk
 
-all: include lib
+all: include lib bin
 
 .PHONY: include \
-        lib
+        lib \
+        bin
 
 include:
 	@echo copy headers to the os tree; \
@@ -14,3 +15,8 @@ lib:
 	@echo build libraries; \
 	mkdir -p ${OSLIBDIR}; \
 	${MAKE} -C ${SRCLIBDIR};
+
+bin:
+	@echo build binaries; \
+	mkdir -p ${OSBINDIR}; \
+	${MAKE} -C ${SRCBINDIR};
