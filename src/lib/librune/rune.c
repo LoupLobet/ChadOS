@@ -1,7 +1,6 @@
 #include <c.h>
 #include <libc.h>
 
-
 static int	 utfbyte(uchar *, uchar);
 
 enum

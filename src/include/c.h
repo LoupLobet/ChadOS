@@ -23,9 +23,5 @@ typedef unsigned int uint;
 typedef unsigned long ulong;
 typedef unsigned long long uvlong;
 
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 #endif

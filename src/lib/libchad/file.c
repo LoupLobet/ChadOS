@@ -2,6 +2,10 @@
 #define UNIX
 #include <libc.h>
 
+#include <fcntl.h>
+#include <stdio.h>
+#include <unistd.h>
+
 int
 chadclose(int fd)
 {

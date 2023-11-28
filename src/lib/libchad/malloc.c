@@ -2,6 +2,8 @@
 #define UNIX
 #include <libc.h>
 
+#include <stdlib.h>
+
 void *
 chadcalloc(ulong n, ulong size)
 {
