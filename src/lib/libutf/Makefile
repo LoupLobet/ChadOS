@@ -3,19 +3,17 @@ include ${CONFIG}
 NAME=libutf
 LIB=libutf.a
 SRCS=utf.c
-INCS=utf.h
 OBJS=${SRCS:.c=.o}
 
-all: info clean ${OBJS} ${OSLIBDIR}/${LIB}
+all: info clean ${OSLIBDIR}/${LIB}
 
 info:
-	@echo ${NAME}:
 
-${OBJS}: %.o: %.c
-	${CC} ${CFLAGS} -c $< -o $@
+.c.o:
+	${CC} -c ${CFLAGS} $<
 
 ${OSLIBDIR}/${LIB}: ${OBJS}
-	${AR} $@ $^
+	${AR} $@ ${OBJS}
 
 clean:
 	@rm -f *.o *.a

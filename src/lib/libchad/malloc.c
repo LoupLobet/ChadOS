@@ -1,7 +1,6 @@
-#define UNIX
 #include <c.h>
-
-#include <stdlib.h> /* calloc(3) free(3) malloc(3) realloc(3) */
+#define UNIX
+#include <libc.h>
 
 void *
 chadcalloc(ulong n, ulong size)

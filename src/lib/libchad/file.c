@@ -1,9 +1,6 @@
-#define UNIX
 #include <c.h>
+#define UNIX
 #include <libc.h>
-#include <fcntl.h>  /* fcntl(2) open(2) */
-#include <stdio.h>  /* remove(3) */
-#include <unistd.h> /* close(2) write(2) */
 
 int
 chadclose(int fd)

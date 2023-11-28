@@ -1,20 +1,10 @@
 include ${CONFIG}
 
-SRCS=${wildcard *.c}
-OBJS=${SRCS:.c=.o}
-BINS=${SRCS:%.c=%}
+BINS=test
 
-all: clean ${BINS}
+all: bins
 
-.PHONY: ${BINS}
-
-.c.o:
-	${CC} -c ${CFLAGS} $<
-
-${BINS}: %: %.o
-	${LD} $< -o ${OSBINDIR}/$@ ${LDFLAGS}
-
-clean:
-	rm -f *.o ${BINS}
-
-
+bins:
+	@for bin in ${BINS}; do \
+		${MAKE} -C "$${bin}"; \
+	done

@@ -1,7 +1,7 @@
 include ${CONFIG}
 
 LIBS=\
-	libc \
+	libchad \
 	librune \
 	libutf
 

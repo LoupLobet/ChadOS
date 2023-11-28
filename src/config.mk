@@ -1,4 +1,4 @@
-OS=/Users/loup/chad-os
+OS=/tmp/chad-os
 SRCROOT=${OS}/src
 CONFIG=${SRCROOT}/config.mk
 
@@ -17,10 +17,10 @@ LD=cc
 AR=ar rsc
 I=-I${OS}/include
 L=\
-	-L${OS}/lib \
-	-lrune \
-	-lutf \
-	-lc
+	-L${OSLIBDIR}\
+	-lchad\
+	-lrune\
+	-lutf
 
 CFLAGS=-Wall -pedantic -std=c99 ${I}
-LDFLAGS=${L}
+LDFLAGS=${L} -static
