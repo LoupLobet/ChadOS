@@ -2,14 +2,14 @@ include ${CONFIG}
 
 NAME=libchad
 LIB=libchad.a
-SRCS=malloc.c file.c
+SRCS=malloc.c file.c unixfile.c
 OBJS=${SRCS:.c=.o}
 
 all: info clean ${OSLIBDIR}/${LIB}
 
 info:
 
-.c.o: 
+.c.o:
 	${CC} -c ${CFLAGS} $<
 
 ${OSLIBDIR}/${LIB}: ${OBJS}

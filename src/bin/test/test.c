@@ -4,8 +4,16 @@
 int
 main(int argc, char *argv[])
 {
-	char s[] = "Be a Chad !\n";
+	char buf[1024] = {0};
+	File *f;
 
-	write(1, s, sizeof(s) - 1);
+	if (argc == 2) {
+		f = file();
+		open(f, argv[1], OREAD);
+		read(f, buf, sizeof(buf) - 1);
+		write(chadstdout, buf, sizeof(buf) - 1);
+		close(f);
+		destroy(f);
+	}
 	return 0;
 }

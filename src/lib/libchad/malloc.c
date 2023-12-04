@@ -1,5 +1,5 @@
 #include <c.h>
-#define UNIX
+#define UNIX_C
 #include <libc.h>
 
 #include <stdlib.h>
