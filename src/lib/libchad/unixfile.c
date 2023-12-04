@@ -10,7 +10,13 @@
 int
 unixclose(File *f)
 {
-	return close(*(int *)f->aux);
+	int n = 0;
+
+	if (*(int *)f->aux >= 0) {
+		n = close(*(int *)f->aux);
+		*(int *)f->aux = -1;
+	}
+	return n;
 }
 
 int

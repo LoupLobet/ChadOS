@@ -11,8 +11,7 @@ main(int argc, char *argv[])
 		f = file();
 		open(f, argv[1], OREAD);
 		read(f, buf, sizeof(buf) - 1);
-		write(chadstdout, buf, sizeof(buf) - 1);
-		close(f);
+		write(stdout, buf, sizeof(buf) - 1);
 		destroy(f);
 	}
 	return 0;

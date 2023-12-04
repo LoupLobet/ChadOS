@@ -29,5 +29,7 @@ chadclose(File *f)
 int
 chaddestroy(File *f)
 {
+	/* destroy implies close */
+	f->close(f);
 	return f->destroy(f);
 }
