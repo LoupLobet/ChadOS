@@ -31,8 +31,17 @@ extern void	 chadexit(int);
 #endif
 
 /*
+ * OpenBSD only
+ */
+
+#ifdef __OpenBSD__
+#include <pledge.h>
+#endif
+
+/*
  * malloc
  */
+
 extern void	*chadcalloc(ulong, ulong);
 extern void	 chadfree(void *);
 extern void	*chadmalloc(ulong);
