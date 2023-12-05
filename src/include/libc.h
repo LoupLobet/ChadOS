@@ -11,11 +11,24 @@
 #endif
 
 /*
+ * C99
+ */
+
+#include <stdarg.h>
+
+/*
  * OS specific
  */
 
 #include <rune.h>
 #include <utf.h>
+#include <util.h>
+
+extern void	 chadexit(int);
+
+#ifndef UNIX_C
+#define exit chadexit
+#endif
 
 /*
  * malloc
@@ -93,10 +106,12 @@ extern long	 unixwrite(File *, void *, long);
 
 extern File *chadstdin;
 extern File *chadstdout;
+extern File *chadstderr;
 
 #ifndef UNIX_C
 #define stdin  chadstdin
 #define stdout chadstdout
+#define stderr chadstderr
 #endif
 
 #endif

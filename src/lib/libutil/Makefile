@@ -1,8 +1,8 @@
 include ${CONFIG}
 
-NAME=libchad
-LIB=libchad.a
-SRCS=malloc.c file.c unixfile.c os.c
+NAME=libutil
+LIB=libutil.a
+SRCS=util.c
 OBJS=${SRCS:.c=.o}
 
 all: info clean ${OSLIBDIR}/${LIB}

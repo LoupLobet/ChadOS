@@ -3,7 +3,8 @@ include ${CONFIG}
 LIBS=\
 	libchad \
 	librune \
-	libutf
+	libutf \
+	libutil
 
 all: libs
 

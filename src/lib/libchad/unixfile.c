@@ -110,6 +110,7 @@ unixwrite(File *f, void *buf, long n)
 
 static int stdinfd = STDIN_FILENO;
 static int stdoutfd = STDOUT_FILENO;
+static int stderrfd = STDERR_FILENO;
 
 static File _chadstdin = {
 	.type = UNIX_FILE,
@@ -131,5 +132,16 @@ static File _chadstdout = {
 	.write = unixwrite,
 };
 
+static File _chadstderr = {
+	.type = UNIX_FILE,
+	.aux = &stderrfd,
+	.close = nil,
+	.destroy = nil,
+	.open = nil,
+	.read = nil,
+	.write = unixwrite,
+};
+
 File *chadstdin = &_chadstdin;
 File *chadstdout = &_chadstdout;
+File *chadstderr = &_chadstderr;
