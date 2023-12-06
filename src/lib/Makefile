@@ -2,9 +2,11 @@ include ${CONFIG}
 
 LIBS=\
 	libchad \
+	libpledge \
 	librune \
 	libutf \
 	libutil
+
 
 all: libs
 

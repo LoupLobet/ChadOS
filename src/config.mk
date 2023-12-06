@@ -21,6 +21,10 @@ L=\
 	-L${OSLIBDIR}\
 	-lchad\
 	-lrune\
-	-lutf
+	-lutf\
+	-lutil
+
 CFLAGS=-Wall -pedantic -std=c99 ${I}
 LDFLAGS=${L}
+# OpenBSD uncomment
+# LDFALGS=${L} -lpledge
