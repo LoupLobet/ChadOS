@@ -2,7 +2,7 @@
 #define UNIX_C
 
 #ifdef __OpenBSD__
-#include <stdlib.h>
+#include <unistd.h>
 
 int
 chadpledge(const char *promises, const char *execpromises)
