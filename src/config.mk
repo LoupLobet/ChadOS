@@ -15,7 +15,6 @@ SRCINCDIR=${SRCROOT}/include
 SRCBINDIR=${SRCROOT}/bin
 MAKE=${MK} CONFIG=${CONFIG}
 
-
 I=-I${OS}/include
 L=\
 	-L${OSLIBDIR}\
@@ -26,5 +25,12 @@ L=\
 
 CFLAGS=-Wall -pedantic -std=c99 ${I}
 LDFLAGS=${L}
+
 # OpenBSD uncomment
-# LDFALGS=${L} -lpledge
+#LDFLAGS+=-lpledge
+
+# Uncomment if you're a true Chad !
+# I'll be kind and disable this option by default, to avoid you
+# having potential massive linking errors (thank you MacOS for
+# not providing any static libc - that's fucking cringe).
+#LDFLAGS+=-static
