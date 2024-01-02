@@ -3,6 +3,9 @@
 
 #include <c.h>
 
+#define MIN(x, y) ((x) > (y) ? (y) : (x))
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
+
 extern const char *_progname;
 
 extern void	*ecalloc(ulong, ulong);

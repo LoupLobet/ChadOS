@@ -40,6 +40,24 @@ chadstrcat(char *dst, char *src)
 	return strcat(dst, src);
 }
 
+long
+chadstrlcat(char *dst, char *src, long n)
+{
+	long dlen, slen;
+
+	dlen = strnlen(dst, n);
+	slen = strlen(src);
+	if (dlen == n)
+		return n + slen;
+	if (slen < n - dlen)
+		memcpy(dst + dlen, src, slen + 1);
+	else {
+		memcpy(dst + dlen, src, n - dlen - 1);
+		dst[n - 1] = '\0';
+	}
+	return dlen + slen;
+}
+
 char *
 chadstrncat(char *dst, char *src, long n)
 {
@@ -76,6 +94,21 @@ chadstrcpy(char *dst, char *src)
 	return strcpy(dst, src);
 }
 
+long
+chadstrlcpy(char *dst, char *src, long n)
+{
+	long len;
+
+	len = strlen(src);
+	if (len + 1 < n)
+		memcpy(dst, src, len + 1);
+	else if (n) {
+		memcpy(dst, src, n - 1);
+		dst[n - 1] = '\0';
+	}
+	return len;
+}
+
 char *
 chadstrncpy(char *dst, char *src, long n)
 {
@@ -86,6 +119,12 @@ long
 chadstrlen(char *s)
 {
 	return strlen(s);
+}
+
+long
+chadstrnlen(char *s, long n)
+{
+	return strnlen(s, n);
 }
 
 long

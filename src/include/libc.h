@@ -123,21 +123,27 @@ extern File *chadstderr;
 #define stderr chadstderr
 #endif
 
-/* string */
+/*
+ * string
+ */
+
 extern void	*chadmemcpy(void *, void *, long);
 extern void	*chadmemmove(void *, void *, long);
 extern void	*chadmemchr(const void *, int , long);
 extern int	 chadmemcmp(void *, void *, long);
 extern void	*chadmemset(void *, int , long);
 extern char	*chadstrcat(char *, char *);
+extern long	 chadstrlcat(char *, char *, long);
 extern char	*chadstrncat(char *, char *, long);
 extern char	*chadstrchr(char *, int);
 extern char	*chadstrrchr(char *, int);
 extern int	 chadstrcmp(char *, char *);
 extern int	 chadstrncmp(char *, char *, long);
 extern char	*chadstrcpy(char *, char *);
+extern long	 chadstrlcpy(char *, char *, long);
 extern char	*chadstrncpy(char *, char *, long);
 extern long	 chadstrlen(char *);
+extern long	 chadstrnlen(char *, long);
 extern long	 chadstrspn(char *, char *);
 extern long	 chadstrcspn(char *, char *);
 extern char	*chadstrpbrk(char *, char *);
@@ -152,14 +158,17 @@ extern char	*chadstrdup(char *);
 #define memcmp  chadmemcmp
 #define memset  chadmemset
 #define strcat  chadstrcat
+#define strlcat chadstrlcat
 #define strncat chadstrncat
 #define strchr  chadstrchr
 #define strrchr chadstrrchr
 #define strcmp  chadstrcmp
 #define strncmp chadstrncmp
 #define strcpy  chadstrcpy
+#define strlcpy chadstrlcpy
 #define strncpy chadstrncpy
 #define strlen  chadstrlen
+#define strnlen chadstrnlen
 #define strspn  chadstrspn
 #define strcspn chadstrcspn
 #define strpbrk chadstrpbrk
