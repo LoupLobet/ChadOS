@@ -1,4 +1,4 @@
-OS=/Users/loup/chad-os
+OS=/home/loup/ChadOS
 SHELL=/bin/bash
 MK=make
 CC=cc
@@ -21,7 +21,8 @@ L=\
 	-lchad\
 	-lrune\
 	-lutf\
-	-lutil
+	-lutil\
+	-lio
 
 CFLAGS=-D _POSIX_C_SOURCE=200809L -Wall -pedantic -std=c99 ${I}
 LDFLAGS=${L}

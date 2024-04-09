@@ -61,8 +61,9 @@ extern void	*chadrealloc(void *, ulong);
 typedef struct file {
 	uint type;
 	void *aux;
+	long esize;
 	int  (*close)(struct file *);
-	int	 (*destroy)(struct file *);
+	int  (*destroy)(struct file *);
 	int  (*open)(struct file *, void *, int);
 	long (*read)(struct file *, void *, long);
 	long (*write)(struct file *, void *, long);
@@ -73,7 +74,7 @@ extern int	 chadclose(File *);
 extern int	 chaddestroy(File *);
 extern int	 chadopen(File *, void *, int);
 extern long	 chadread(File *, void *, long);
-extern long  chadwrite(File *, void *, long);
+extern long	 chadwrite(File *, void *, long);
 
 #ifndef UNIX_C
 #define close   chadclose

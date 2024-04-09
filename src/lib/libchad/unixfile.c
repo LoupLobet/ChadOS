@@ -38,6 +38,7 @@ file(void)
 		free(f);
 		return nil;
 	}
+	f->esize = sizeof(char);
 	f->type = UNIX_FILE;
 	f->open = unixopen;
 	f->read = unixread;
@@ -70,12 +71,12 @@ unixopen(File *f, void *path, int oflag)
 
 	if (oflag&(~(3|OCEXEC|ORCLOSE|OLOCK|OLOCKW)))
 		return 1;
-	*fp = open(path, mode);
+	*fp = open((char *)path, mode);
 	if (*fp >= 0) {
 		if (oflag&OCEXEC)
 			fcntl(*fp, F_SETFL, FD_CLOEXEC);
 		if (oflag&ORCLOSE)
-			remove(path);
+			remove((char *)path);
 		if (oflag&(OLOCK|OLOCKW)) {
 			if ((oflag&3) == OREAD)
 				fl.l_type = F_RDLCK;

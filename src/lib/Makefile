@@ -5,7 +5,8 @@ LIBS=\
 	libpledge \
 	librune \
 	libutf \
-	libutil
+	libutil \
+	libio
 
 
 all: libs
