@@ -1,4 +1,4 @@
-OS=/home/loup/ChadOS
+OS=/Users/loup/ChadOS
 SHELL=/bin/bash
 MK=make
 CC=cc

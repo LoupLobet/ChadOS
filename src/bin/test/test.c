@@ -1,20 +1,24 @@
 #include <c.h>
 #include <libc.h>
 
+#include <io.h>
+
 int
 main(int argc, char *argv[])
 {
-	char buf[1024] = {0};
+	long n;
 	File *f;
-#ifdef __OpenBSD__
-	if (pledge("stdio rpath", nil) == -1)
-		exit(1);
-#endif
+	Reader *rd;
+	char buf[10];
+
 	if (argc == 2) {
 		f = file();
 		open(f, argv[1], OREAD);
-		read(f, buf, sizeof(buf) - 1);
-		write(stdout, buf, sizeof(buf) - 1);
+		rd = rdopen(f);
+		while ((n = rdread(rd, buf, sizeof(buf))) > 0) {
+			write(stdout, buf, n);
+		}
+		rdclose(rd);
 		destroy(f);
 	}
 	return 0;

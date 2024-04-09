@@ -15,7 +15,6 @@ typedef struct {
 extern void	 rdclose(Reader *);
 extern Reader	*rdopen(File *);
 extern long	 rdread(Reader *, void *, long);
-extern long	 rdwrite(Reader *, void *, long);
 extern long	 readn(File *, void *, long);
 extern long	 writen(File *, void *, long);
 
